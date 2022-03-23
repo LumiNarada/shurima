@@ -1,0 +1,8 @@
+#registrate {
+  color: #ee0979;
+  text-decoration: underline;
+}
+
+#registrate:hover {
+  color: #be0761;
+}
