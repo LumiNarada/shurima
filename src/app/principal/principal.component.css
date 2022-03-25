@@ -2,7 +2,7 @@ header.masthead {
   background-image: url("../../assets/img/Fondo.jpg");
 }
 
-.container{
+.containerT{
   color: ghostwhite;
 }
 
@@ -20,4 +20,7 @@ img {
 #botoncin:hover {
   border-color: rgba(0,0,0,.3) !important;
   box-shadow: 0 0 0 .25rem rgba(0,0,0,.3) !important;
+}
+.container{
+  color:  black !important;
 }
