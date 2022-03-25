@@ -1,0 +1,53 @@
+iframe{
+    width:100%;
+    height:100%;
+}
+table{
+    width: 100%;
+}
+.renglon{
+    padding-left: 1rem;
+}
+.clip{
+    width: 60%;
+}
+.data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.integrante{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    margin-bottom: 3rem;
+    margin: auto;
+    padding-bottom: 7rem;
+}
+.pictureP{
+    border-radius: 50%;
+    width: 100px;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 991.98px) {
+    .integrante{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    .clip{
+        margin-top: 2rem;
+        height: 13rem;
+    }
+}
+@media (max-width: 550px) {
+    .clip{
+        width: 95%;
+    }
+}
+#container{
+    margin-top: 7rem;
+}
