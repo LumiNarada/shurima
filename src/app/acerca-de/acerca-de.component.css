@@ -1,0 +1,94 @@
+div.jumbotron.carousel-hero {
+    color: #fff;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-bottom: 0;
+  }
+  
+  div.jumbotron.hero-nature {
+    background-image: url('../../assets/img/984681.jpg');
+  }
+  
+  div.jumbotron.hero-photography {
+    background-image: url('../../assets/img/816431354.png');
+  }
+  
+  @media (min-width: 992px) {
+    div.jumbotron {
+      height: 25rem;
+    }
+  }
+  
+  div.jumbotron.hero-technology {
+    background-image: url('../../assets/img/41654162.png');
+  }
+  
+  h1.hero-title, h2.hero-title, h3.hero-title {
+    text-shadow: 0 3px 3px rgba(0,0,0,0.4);
+    color: #fff;
+  }
+  
+  p.hero-subtitle {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 10px 15px;
+    color: #fff;
+  }
+  
+  .plat {
+    border-radius: 0px;
+  }
+  
+  .btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0 #048f83!important;
+  }
+  
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #016090;
+    border-color: #016090;
+  }
+  
+  .btn.btn-primary {
+    background-color: #343a40!important;
+    border-color: #343a40!important;
+  }
+  
+  .btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 .2rem rgba(0,123,255,.5);
+  }
+  
+  
+  span {
+    font-style: inherit;
+    font-weight: inherit;
+  }
+  #carrousel {
+    margin-top: 3rem;
+    background-image: url("../../assets/img/641684684.jpg");
+  }
+  
+  @media (min-width: 992px) {
+    #carrousel {
+      margin-top: 10px;
+      padding: 7rem 10rem;
+    }
+  }
+  
+  .hero-title {
+    margin-top: 3rem;
+  }
+  
+  .carousel-indicators {
+    margin-bottom: 1rem;
+  }
+  
+  #container {
+    width: 70%;
+    margin: auto;
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+  }
