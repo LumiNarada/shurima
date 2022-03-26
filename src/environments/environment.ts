@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost/UNICA/api/'
+  baseUrl: 'http://localhost/UNICA/WebDevelopment/Shurima/api/'
 };
 
 /*
