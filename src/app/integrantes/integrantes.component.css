@@ -43,7 +43,7 @@ table{
         height: 13rem;
     }
 }
-@media (max-width: 550px) {
+@media (max-width: 600px) {
     .clip{
         width: 95%;
     }
