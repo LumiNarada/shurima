@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { IntegrantesComponent } from './integrantes/integrantes.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path:'', pathMatch:'full', redirectTo:'principal'},
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path:'acercaDe',component:AcercaDeComponent},
   { path:'integrantes',component:IntegrantesComponent},
   { path:'login',component:LogInComponent},
+  { path:'registration',component:RegisterComponent},
   { path:'**',component:PrincipalComponent}
 ];
 
@@ -29,7 +31,8 @@ const routes: Routes = [
     FooterComponent,
     AcercaDeComponent,
     LogInComponent,
-    IntegrantesComponent
+    IntegrantesComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers:[],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
