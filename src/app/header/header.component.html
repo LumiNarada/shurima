@@ -2,10 +2,12 @@
     <div class="container"><img src="assets/img/apex-logo.png" style="width: 3rem;margin-right: 2rem;"><a class="navbar-brand" [routerLink]="['./principal']">ShURIMA</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" (click)="moverAlNav()" [routerLink]="['./acercaDe']">Acerca de</a></li>
-                <li class="nav-item"><a class="nav-link" (click)="moverAlNav()" [routerLink]="['./integrantes']">Integrantes</a></li>
-                <li class="nav-item"><a class="nav-link" (click)="moverAlNav()" [routerLink]="['./login']">Iniciar Sesión</a></li>
-                <li class="nav-item"><a class="nav-link" (click)="moverAlNav()" [routerLink]="['./registration']" id="registrate">¡REGÍSTRATE!</a></li>
+                <li class="nav-item"><a class="nav-link" (click)="verificarSesion()" [routerLink]="['./acercaDe']">Acerca de</a></li>
+                <li class="nav-item"><a class="nav-link" (click)="verificarSesion()" [routerLink]="['./integrantes']">Integrantes</a></li>
+                <li class="nav-item" id="open"><a class="nav-link" (click)="verificarSesion()" [routerLink]="['./login']">Iniciar Sesión</a></li>
+                <li class="nav-item" id="close"><a class="nav-link" (click)="verificarSesion()" (click)="cerrarSesion()" [routerLink]="['./principal']" >Cerrar Sesión</a></li>
+                <li class="nav-item" id="perfil"><a class="nav-link pink" (click)="verificarSesion()" (click)="perfil()" [routerLink]="['./integrantes']">Perfil</a></li> 
+                <li class="nav-item" id="registrate"><a class="nav-link pink" (click)="verificarSesion()" [routerLink]="['./registration']">¡REGÍSTRATE!</a></li>     
             </ul>
         </div>
     </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Persona } from '../models/personas';
+import { PersonasService } from '../servicios/personas.service';
 
 @Component({
   selector: 'app-integrantes',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./integrantes.component.css']
 })
 export class IntegrantesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  personas:Persona[]=[]
+  constructor(public personasService:PersonasService) {
   }
-
+  ngOnInit(): void {
+      this.getPersonas();
+  }
+  getPersonas():void{
+    this.personasService.getPersonas().subscribe(response =>{
+      const{personas}= response;
+      this.personas = personas;
+    });
+  }
 }

@@ -1,8 +1,12 @@
-#registrate {
-  color: #ff0000;
-  text-decoration: underline;
+.no-visible{
+  display: none;
 }
 
-#registrate:hover {
-  color: #ff0000;
+.pink{
+  color: #ff0000 !important;
+  text-decoration: underline !important;
+}
+
+.pink:hover {
+  color: #ff0000 !important;
 }

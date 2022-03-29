@@ -10,10 +10,17 @@ export class PersonasService {
 
   baseUrl = environment.baseUrl;
 
-  constructor( public http:HttpClient) { }
+  constructor( public http:HttpClient, private cookieService: CookieService) { }
 
   getPersonas(){
     return this.http.get<any>(this.baseUrl);
   }
-
+  eliminarCookies(){
+    this.cookieService.delete("User")
+    this.cookieService.delete("Pass")
+  }
+  crearCookies(email:string, password:string){
+    this.cookieService.set('User', email);
+    this.cookieService.set('Pass', password);
+  }
 }

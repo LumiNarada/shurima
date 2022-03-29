@@ -28,7 +28,17 @@ switch ($methodHTTP){
             while($fila = mysqli_fetch_array($respuesta, MYSQLI_NUM)){
                 $list[]= array(
                     "email"=>$fila[0],
-                    "pass"=>$fila[1]
+                    "pass"=>$fila[1],
+                    "nick"=>$fila[2],
+                    "name"=>$fila[3],
+                    "main"=>$fila[4],
+                    "edad"=>$fila[5],
+                    "rango"=>$fila[6],
+                    "division"=>$fila[7],
+                    "ruta_foto"=>$fila[8],
+                    "ruta_video"=>$fila[9],
+                    "administrador"=>$fila[10],
+                    "aceptado"=>$fila[11]
                 );
             }
             echo json_encode(["personas" => $list]);
