@@ -4,46 +4,83 @@
             <div class="alert alert-info alert-dismissible absolue center" role="alert"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button><span>Profile save with success</span></div>
         </div>
     </div>
-    <form>
+    <form [formGroup]="formulario" (ngSubmit)="submit()">
         <div class="row profile-row">
             <div class="col-md-4 relative">
                 <h1>Perfil</h1>
                 <hr>
                 <div class="avatar">
                     <div class="avatar-bg center"></div>
-                </div><input class="form-control form-control" type="file" name="avatar-file">
+                </div>
+                <input formControlName="avatar" class="form-control form-control" type="file" name="avatar-file">
             </div>
             <div class="col-md-8">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
-                        <div class="form-group mb-3"><label class="form-label">Nombre</label><input class="form-control" type="text" name="firstname"></div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input formControlName="nombre" class="form-control" type="text" name="nombre" autocomplete="off">
+                        </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
-                        <div class="form-group mb-3"><label class="form-label">Nick Name</label><input class="form-control" type="text" name="lastname"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="form-group mb-3"><label class="form-label">Main</label><input class="form-control" type="password" name="password" autocomplete="off" required=""></div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="form-group mb-3"><label class="form-label">Enlace a videoclip</label><input class="form-control" type="password" name="confirmpass" autocomplete="off" required=""></div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Nick Name</label>
+                            <input formControlName="nick" class="form-control" type="text" name="nick" autocomplete="off">
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
-                        <div class="form-group mb-3"><label class="form-label">Rango</label><input class="form-control" type="password" name="password" autocomplete="off" required=""></div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Main</label>
+                            <input formControlName="main" class="form-control" type="text" name="main" autocomplete="off">
+                        </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
-                        <div class="form-group mb-3"><label class="form-label">División</label><input class="form-control" type="password" name="confirmpass" autocomplete="off" required=""></div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Edad</label>
+                            <input formControlName="edad" class="form-control" type="number" name="edad" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Email</label>
+                            <input formControlName="email" class="form-control" type="text" name="email" inputmode="email" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Enlace a videoclip</label>
+                            <input formControlName="video" class="form-control" type="text" name="video" autocomplete="off">
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
-                        <div class="form-group mb-3"><label class="form-label">Contraseña</label><input class="form-control" type="password" name="password" autocomplete="off" required=""></div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Rango</label>
+                            <input formControlName="rango"  class="form-control" type="text" name="rango" autocomplete="off">
+                        </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
-                        <div class="form-group mb-3"><label class="form-label">Confirmar Contraseña</label><input class="form-control" type="password" name="confirmpass" autocomplete="off" required=""></div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">División</label>
+                            <input formControlName="division" class="form-control" type="text" name="division" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Contraseña</label>
+                            <input formControlName="password" class="form-control" type="password" name="password" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Confirmar Contraseña</label>
+                            <input formControlName="confirmpassword" class="form-control" type="password" name="confirmpassword" autocomplete="off">
+                        </div>
                     </div>
                 </div>
                 <hr>

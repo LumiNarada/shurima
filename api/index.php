@@ -14,10 +14,8 @@ $methodHTTP = $_SERVER['REQUEST_METHOD'];
 
 switch ($methodHTTP){
     case 'GET':
-
         //Inicia conexión con base de datos
         $conexion = mysqli_connect(local, usuario, contrasena, nombre);
-
         if( !$conexion ){
             echo mysqli_connect_error();
             exit();
@@ -43,10 +41,25 @@ switch ($methodHTTP){
             }
             echo json_encode(["personas" => $list]);
         }
-
+        break;
+    case 'POST':
+        $conexion = mysqli_connect(local, usuario, contrasena, nombre);
+        if( !$conexion ){
+            echo mysqli_connect_error();
+            exit();
+        }
+        else {
+            $json = file_get_contents("php://input");
+            $data = json_decode($json);
+            $consulta = "INSERT INTO integrante VALUES ($data->email, $data->password, $data->nick, $data->name,  $data->main,  $data->edad, $data->rango,  $data->division,  $data->avatar,  $data->video, FALSE, FALSE)";
+            $respuesta = mysqli_query($conexion, $consulta);
+            $usuario= $data->email; 
+            echo $data;
+        }
         break;
     default:
         break;
 
 }
+
 ?>

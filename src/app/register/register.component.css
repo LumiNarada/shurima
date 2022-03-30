@@ -1,7 +1,7 @@
 #profile {
   background-color: var(--bs-white);
   border-radius: 1rem;
-  margin-top: 7rem;
+  margin-top: 3rem;
 }
 div.avatar > img {
   border-radius: 50%;
