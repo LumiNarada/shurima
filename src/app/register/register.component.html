@@ -1,26 +1,56 @@
-<div class="container-fluid">
-    <div class="row mh-100vh">
-        <div class="col-10 col-sm-8 col-md-6 col-lg-6 offset-1 offset-sm-2 offset-md-3 offset-lg-0 align-self-center d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0" id="login-block" style="color: rgb(225,228,232);">
-            <div class="m-auto w-lg-75 w-xl-50">
-                <h2 class="d-xxl-flex align-items-xxl-center fw-light mb-5" styl="color: black;" style="color: rgb(14,16,15);"><img id="logo" src="assets/img/apexpng.png">&nbsp;SHURIMA&nbsp;</h2>
-                <form [formGroup]="formulario" (ngSubmit)="submit()">
-                    <div class="form-group mb-3">
-                        <label class="form-label" style="color: rgb(14,16,15);">Email</label>
-                        <label class="form-label no-visible" style="color: rgb(255, 0, 0);" *ngIf="validE"> &nbsp; No válido </label>
-                        <input name="email" class="form-control" type="text" inputmode="email" formControlName="email">
-                    </div>
-                    <div class="form-group mb-3">
-                        <label class="form-label" style="color: rgb(14,16,15);">Contraseña</label>
-                        <label class="form-label no-visible" style="color: rgb(255, 0, 0);" *ngIf="validP"> &nbsp; No válido </label>
-                        <input name="password" class="form-control" type="password" required="" formControlName="password">
-                    </div>
-                    <button class="btn btn-info mt-2" type="submit" style="background: #1a1c1b;color: white;">Iniciar Sesión</button>
-                </form>
-                <p class="mt-3 mb-0"></p>
-            </div>
-        </div>
-        <div class="col-lg-6 d-flex align-items-end" id="bg-block" style="background-image: url(&quot;assets/img/1153033.jpg&quot;);background-size: cover;background-position: center center;">
-            <p class="ms-auto small text-dark mb-2"><br></p>
+<div class="container profile profile-view" id="profile">
+    <div class="row">
+        <div class="col-md-12 alert-col relative">
+            <div class="alert alert-info alert-dismissible absolue center" role="alert"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button><span>Profile save with success</span></div>
         </div>
     </div>
+    <form>
+        <div class="row profile-row">
+            <div class="col-md-4 relative">
+                <h1>Perfil</h1>
+                <hr>
+                <div class="avatar">
+                    <div class="avatar-bg center"></div>
+                </div><input class="form-control form-control" type="file" name="avatar-file">
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group mb-3"><label class="form-label">Nombre</label><input class="form-control" type="text" name="firstname"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group mb-3"><label class="form-label">Nick Name</label><input class="form-control" type="text" name="lastname"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group mb-3"><label class="form-label">Main</label><input class="form-control" type="password" name="password" autocomplete="off" required=""></div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group mb-3"><label class="form-label">Enlace a videoclip</label><input class="form-control" type="password" name="confirmpass" autocomplete="off" required=""></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group mb-3"><label class="form-label">Rango</label><input class="form-control" type="password" name="password" autocomplete="off" required=""></div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group mb-3"><label class="form-label">División</label><input class="form-control" type="password" name="confirmpass" autocomplete="off" required=""></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group mb-3"><label class="form-label">Contraseña</label><input class="form-control" type="password" name="password" autocomplete="off" required=""></div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group mb-3"><label class="form-label">Confirmar Contraseña</label><input class="form-control" type="password" name="confirmpass" autocomplete="off" required=""></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">Guardar</button></div>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
