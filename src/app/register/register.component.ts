@@ -36,11 +36,11 @@ export class RegisterComponent implements OnInit {
     this.personasService.postPersona(this.formulario.value)
   }
   submit(){
-    /**if(this.formulario.valid==false){
+    if(this.formulario.valid==false){
       window.alert("Datos incorrectos")
     }
-    else{**/
+    else{
       this.postPersona();
-   // }
+    }
   }
 }

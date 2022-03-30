@@ -2,7 +2,7 @@
     <div class="integrante"  *ngFor="let persona of personas" >
         <div class="supercontainer" *ngIf="persona['email']==profile">
         <div class="data">
-            <img src="../../assets/img/faker.jpg" alt="Profile" class="pictureP">
+            <img src="../../assets/img/{{persona['ruta_foto']}}" alt="Profile" class="pictureP">
             <h3>{{persona["nick"]}}</h3>
             <table>
                 <tr>
