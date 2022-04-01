@@ -51,7 +51,7 @@ export class LogInComponent implements OnInit {
       this.personas.forEach((key : any, val: any) => {
         if (this.formulario.value.email==key["email"]){
           if (this.formulario.value.password==key["pass"]){
-            this.personasService.crearCookies(this.formulario.value.email, this.formulario.value.passsword);
+            this.personasService.crearCookies(this.formulario.value.email);
           }
         }
       })

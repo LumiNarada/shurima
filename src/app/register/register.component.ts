@@ -16,17 +16,17 @@ export class RegisterComponent implements OnInit {
   respuesta:string ="";
   constructor(public personasService:PersonasService, private cookieService: CookieService, public router: Router) { 
     this.formulario=new FormGroup({
-      avatar: new FormControl('',[Validators.required]),
-      nombre: new FormControl('',[Validators.required]),
+      avatar: new FormControl({value: '', disabled: true}),
+      nombre: new FormControl('',[Validators.required, Validators.pattern ("^[A-Za-zá-úÁ-Úä-üÄ-Ü ]+$")]),
       nick: new FormControl('',[Validators.required]),
       main: new FormControl('',[Validators.required]),
-      edad: new FormControl('',[Validators.required]),
+      edad: new FormControl('',[Validators.required, Validators.pattern("^[0-9]{1,2}")]),
       video: new FormControl('',[Validators.required]),
       rango: new FormControl('',[Validators.required]),
       division: new FormControl('',[Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$")]),
-      password: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern("^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$")]),
-      confirmpassword: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern("^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$")]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required/**, Validators.pattern("^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$")*/]),
+      confirmpassword: new FormControl('', [Validators.required /**, Validators.pattern("^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$")*/]),
     })
   }
   ngOnInit(): void {
@@ -37,10 +37,18 @@ export class RegisterComponent implements OnInit {
   }
   submit(){
     if(this.formulario.valid==false){
-      window.alert("Datos incorrectos")
+      window.alert("Datos incorrectos");
     }
     else{
-      this.postPersona();
+      if(this.formulario.value.password==this.formulario.value.confirmpassword){
+        this.postPersona();
+        this.personasService.crearCookies(this.formulario.value.email);
+        window.location.replace('/');
+      }
+      else{
+        window.alert("Las contraseñas no coinciden");
+      }
     }
+    
   }
 }

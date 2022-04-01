@@ -19,18 +19,16 @@ export class PersonasService {
   postPersona(data:any){
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post<any>(this.baseUrl,data, {headers}).subscribe(
+    this.http.post<any>(this.baseUrl,data, {headers}).subscribe(
       (data:any)=>{
-        console.log(data)
+        console.log("Okay");
       }
     )
   }
   eliminarCookies(){
     this.cookieService.delete("User")
-    this.cookieService.delete("Pass")
   }
-  crearCookies(email:string, password:string){
+  crearCookies(email:string){
     this.cookieService.set('User', email);
-    this.cookieService.set('Pass', password);
   }
 }

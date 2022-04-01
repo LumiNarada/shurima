@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Persona } from '../models/personas';
 import { PersonasService } from '../servicios/personas.service';
-
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -11,7 +11,7 @@ import { PersonasService } from '../servicios/personas.service';
 export class ProfileComponent implements OnInit {
   personas:Persona[]=[]
   profile:string;
-  constructor(private activatedRoute: ActivatedRoute, public personasService:PersonasService) {
+  constructor(private activatedRoute: ActivatedRoute, public personasService:PersonasService,  private sanitizer: DomSanitizer) {
     this.profile="";
    }
 
@@ -24,6 +24,10 @@ export class ProfileComponent implements OnInit {
   getPersonas():void{
     this.personasService.getPersonas().subscribe(response =>{
       const{personas}= response;
+      const sanitizador =this.sanitizer;
+      personas.forEach(function(value:any, key:any) {
+        value.ruta_video=sanitizador.bypassSecurityTrustResourceUrl(value.ruta_video);
+      });
       this.personas = personas;
     });
   }

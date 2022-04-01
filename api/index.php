@@ -1,8 +1,17 @@
 <?php
-header('Access-Control-Allow-Origin: *');
+/**header('Access-Control-Allow-Origin: *');
 header("Acces-Control-Allow-Headers: X-API-KEY, Origin, Authorization, X-Requested-Whith, Content-Type, Accept, Acces-Control-Request-Method");
 header("Acces-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+**/
+
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: *");
+header("Acces-Control-Allow-Headers: *");
+header("Allow: *");
+
 
 //include_once './shurima.php';
 define("local", "localhost");
@@ -51,10 +60,11 @@ switch ($methodHTTP){
         else {
             $json = file_get_contents("php://input");
             $data = json_decode($json);
-            $consulta = "INSERT INTO integrante VALUES ($data->email, $data->password, $data->nick, $data->name,  $data->main,  $data->edad, $data->rango,  $data->division,  $data->avatar,  $data->video, FALSE, FALSE)";
+            //$consulta= "INSERT INTO integrante VALUES ('yakiemon@gmail.com', '1234',  'Yakie', 'Jackie Chan', 'Yasuo', 60, 'Sirviente', 'Carton Corrugado', 'Yakie.jpg', 'https://www.youtube.com/embed/n8ImQ1SjdY0',FALSE, FALSE)";
+            $consulta = "INSERT INTO integrante VALUES ('".$data->email."', '".$data->password."', '".$data->nick."', '".$data->nombre."',  '".$data->main."',  '".$data->edad."', '".$data->rango."',  '".$data->division."',  'profile.jpg',  '".$data->video."', FALSE, FALSE)";
+            //$consulta = "INSERT INTO prueba VALUES ('coconuts')";
             $respuesta = mysqli_query($conexion, $consulta);
-            $usuario= $data->email; 
-            echo $data;
+            //$usuario= $data->email; 
         }
         break;
     default:
